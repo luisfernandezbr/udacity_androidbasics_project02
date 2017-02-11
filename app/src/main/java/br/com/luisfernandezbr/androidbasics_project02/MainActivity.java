@@ -7,6 +7,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity  {
 
+    public static final int FREE_THROW_POINTS = 1;
+    public static final int TWO_POINTS = 2;
+    public static final int THREE_POINTS = 3;
     private int currentHomeScore;
     private int currentVisitorScore;
 
@@ -29,32 +32,32 @@ public class MainActivity extends AppCompatActivity  {
             }
 
             case R.id.buttonHomePlusFreeThrow: {
-                this.handleHomePlusFreeThrow();
+                this.incrementHomeScore(FREE_THROW_POINTS);
                 break;
             }
 
             case R.id.buttonHomePlusTwoPoints: {
-                this.handleHomePlusTwoPoints();
+                this.incrementHomeScore(TWO_POINTS);
                 break;
             }
 
             case R.id.buttonHomePlusThreePoints: {
-                this.handleHomePlusThreePoints();
+                this.incrementHomeScore(THREE_POINTS);
                 break;
             }
 
             case R.id.buttonVisitorPlusFreeThrow: {
-                this.handleVisitorPlusFreeThrow();
+                this.incrementVisitorScore(FREE_THROW_POINTS);
                 break;
             }
 
             case R.id.buttonVisitorPlusTwoPoints: {
-                this.handleVisitorPlusTwoPoints();
+                this.incrementVisitorScore(TWO_POINTS);
                 break;
             }
 
             case R.id.buttonVisitorPlusThreePoints: {
-                this.handleVisitorPlusThreePoints();
+                this.incrementVisitorScore(THREE_POINTS);
                 break;
             }
         }
@@ -63,43 +66,22 @@ public class MainActivity extends AppCompatActivity  {
     private void initViews() {
         textHomeScore = (TextView) findViewById(R.id.textHomeScore);
         textVisitorScore = (TextView) findViewById(R.id.textVisitorScore);
-    }
 
-    private void handleResetClick() {
-
-    }
-
-    private void handleHomePlusFreeThrow() {
-
-    }
-
-    private void handleHomePlusTwoPoints() {
-
-    }
-
-    private void handleHomePlusThreePoints() {
-
-    }
-
-    private void handleVisitorPlusFreeThrow() {
-
-    }
-
-    private void handleVisitorPlusTwoPoints() {
-
-    }
-
-    private void handleVisitorPlusThreePoints() {
-
+        textHomeScore.setText("0");
+        textVisitorScore.setText("0");
     }
 
     private void incrementHomeScore(int pointsToAdd) {
         currentHomeScore += pointsToAdd;
-        textHomeScore.setText(currentHomeScore);
+        textHomeScore.setText(String.valueOf(currentHomeScore));
     }
 
     private void incrementVisitorScore(int pointsToAdd) {
         currentVisitorScore += pointsToAdd;
-        textVisitorScore.setText(currentVisitorScore);
+        textVisitorScore.setText(String.valueOf(currentVisitorScore));
+    }
+
+    private void handleResetClick() {
+
     }
 }
