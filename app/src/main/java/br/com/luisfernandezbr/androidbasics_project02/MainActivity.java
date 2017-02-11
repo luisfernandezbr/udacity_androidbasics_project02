@@ -3,13 +3,22 @@ package br.com.luisfernandezbr.androidbasics_project02;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity  {
+
+    private int currentHomeScore;
+    private int currentVisitorScore;
+
+    private TextView textHomeScore;
+    private TextView textVisitorScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.initViews();
     }
 
     public void onClickButton(View view) {
@@ -51,6 +60,11 @@ public class MainActivity extends AppCompatActivity  {
         }
     }
 
+    private void initViews() {
+        textHomeScore = (TextView) findViewById(R.id.textHomeScore);
+        textVisitorScore = (TextView) findViewById(R.id.textVisitorScore);
+    }
+
     private void handleResetClick() {
 
     }
@@ -77,5 +91,15 @@ public class MainActivity extends AppCompatActivity  {
 
     private void handleVisitorPlusThreePoints() {
 
+    }
+
+    private void incrementHomeScore(int pointsToAdd) {
+        currentHomeScore += pointsToAdd;
+        textHomeScore.setText(currentHomeScore);
+    }
+
+    private void incrementVisitorScore(int pointsToAdd) {
+        currentVisitorScore += pointsToAdd;
+        textVisitorScore.setText(currentVisitorScore);
     }
 }
