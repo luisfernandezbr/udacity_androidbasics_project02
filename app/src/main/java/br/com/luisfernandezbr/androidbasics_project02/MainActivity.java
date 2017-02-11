@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity  {
     public void onClickButton(View view) {
         switch (view.getId()) {
             case R.id.buttonReset : {
-                this.handleResetClick();
+                this.resetScores();
                 break;
             }
 
@@ -67,8 +67,22 @@ public class MainActivity extends AppCompatActivity  {
         textHomeScore = (TextView) findViewById(R.id.textHomeScore);
         textVisitorScore = (TextView) findViewById(R.id.textVisitorScore);
 
+        this.resetTextScores();
+    }
+
+    private void resetScores() {
+        this.resetTextScores();
+        this.resetScoreCounters();
+    }
+
+    private void resetTextScores() {
         textHomeScore.setText("0");
         textVisitorScore.setText("0");
+    }
+
+    private void resetScoreCounters() {
+        currentHomeScore = 0;
+        currentVisitorScore = 0;
     }
 
     private void incrementHomeScore(int pointsToAdd) {
@@ -79,9 +93,5 @@ public class MainActivity extends AppCompatActivity  {
     private void incrementVisitorScore(int pointsToAdd) {
         currentVisitorScore += pointsToAdd;
         textVisitorScore.setText(String.valueOf(currentVisitorScore));
-    }
-
-    private void handleResetClick() {
-
     }
 }
