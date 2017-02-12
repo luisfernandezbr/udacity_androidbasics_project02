@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Basketball Score</string>
     <string name="button_reset">RESET</string>
+    <string name="home_title">COURT COUNTER</string>
+    <string name="score_title_home_team">GOLDEN STATE</string>
+    <string name="score_title_visitor_team">VISITOR</string>
+    <string name="button_plus_free_throw">+ FREE THROW</string>
+    <string name="button_plus_two_points">+ 2 POINTS</string>
+    <string name="button_plus_three_points">+ 3 POINTS</string>
 </resources>
