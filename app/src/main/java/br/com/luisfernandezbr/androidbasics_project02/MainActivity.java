@@ -1,15 +1,16 @@
 package br.com.luisfernandezbr.androidbasics_project02;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity {
 
-    public static final int FREE_THROW_POINTS = 1;
-    public static final int TWO_POINTS = 2;
-    public static final int THREE_POINTS = 3;
+    private static final int FREE_THROW_POINTS = 1;
+    private static final int TWO_POINTS = 2;
+    private static final int THREE_POINTS = 3;
+
     private int currentHomeScore;
     private int currentVisitorScore;
 
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity  {
 
     public void onClickButton(View view) {
         switch (view.getId()) {
-            case R.id.buttonReset : {
+            case R.id.buttonReset: {
                 this.resetScores();
                 break;
             }
