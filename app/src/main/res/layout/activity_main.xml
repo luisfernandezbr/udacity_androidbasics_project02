@@ -6,11 +6,27 @@
     android:layout_height="match_parent"
     android:background="@drawable/home_backgroung"
     android:paddingBottom="16dp"
-    android:paddingTop="16dp"
     tools:context="br.com.luisfernandezbr.androidbasics_project02.MainActivity"
     >
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="COURT COUNTER"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+    </android.support.v7.widget.Toolbar>
+
     <LinearLayout
+        android:layout_below="@+id/toolbar"
+        android:paddingTop="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
